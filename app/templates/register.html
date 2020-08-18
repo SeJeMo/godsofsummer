@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="s1">
+        <div class="main-container">
+            <h3 style="text-align: center;">Register</h3>
+
+            <form action="" method="post" id = "contact-form" novalidate>
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.username.label }}<br>
+                    {{ form.username(class="input-field") }}<br>
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">[{{error}}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.email.label }}<br>
+                    {{ form.email(class="input-field") }}<br>
+                    {% for error in form.email.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.password.label }}<br>
+                    {{ form.password(class="input-field") }}<br>
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                 <p>
+                    {{ form.password2.label }}<br>
+                    {{ form.password2(class="input-field") }}<br>
+                    {% for error in form.password2.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.token.label }}<br>
+                    {{ form.token(class="input-field") }}<br>
+                    {% for error in form.token.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.submit(id="submit-button") }}</p>
+            </form>
+        </div>
+    </section>
+{% endblock %}

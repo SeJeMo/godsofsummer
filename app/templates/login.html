@@ -23,12 +23,9 @@
                 </p>
                 <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
                 <p>{{ form.submit(id="submit-button") }}</p>
+                <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
             </form>
         </div>
     </section>
-    <section class="s1">
-        <div class="main-container">
-
-        </div>
-    </section>
+    
 {% endblock %}
