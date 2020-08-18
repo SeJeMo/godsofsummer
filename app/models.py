@@ -14,7 +14,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id=db.Column(db.Integer, index=True, db.ForeignKey('user.id'))
+    user_id=db.Column(db.Integer, db.ForeignKey('user.id'), index=True)
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
@@ -23,7 +23,7 @@ class Post(db.Model):
 class Scores(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     score = db.Column(db.Integer)
-    user_id = db.Column(db.Integer, index=True, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), index=True)
 
     def __repr__(self):
         return '<Score {}>'.format(self.score)
