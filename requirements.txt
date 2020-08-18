@@ -1,0 +1,4 @@
+flask_wtf
+WTF_forms
+flask-sqlalchemy
+flask-migrate
