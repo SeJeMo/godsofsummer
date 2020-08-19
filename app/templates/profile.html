@@ -18,7 +18,7 @@
                             <div id="corner-tl" class="corner"></div>
                             <div id="corner-tr" class="corner"></div>
                             <h3>Current Score:</h3>
-                            <p>{{ score.score }}</p>
+                            {% if score.score %}<h3>{ score.score }</h3>{% else %}<h3>0</h3>{% endif %}
                             <div id="corner-bl" class="corner"></div>
                             <div id="corner-br" class="corner"></div>
                         </div>
