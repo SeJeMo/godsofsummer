@@ -12,6 +12,8 @@ class LoginForm(FlaskForm):
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
+    first_name = StringField('First name', validators=[DataRequired()])
+    last_name = StringField('Last name', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
@@ -35,4 +37,9 @@ class RegistrationForm(FlaskForm):
 class EditProfileForm(FlaskForm):
     about_me = TextAreaField('Bio', validators=[Length(min=0, max=256)])
     season_goals = TextAreaField('Season Goals', validators=[Length(min=0, max=256)])
+    submit = SubmitField('Submit')
+
+class PostForm(FlaskForm):
+    post = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=500)])
     submit = SubmitField('Submit')
