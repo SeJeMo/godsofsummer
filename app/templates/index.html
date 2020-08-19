@@ -24,51 +24,12 @@
         </div>
     </section>
     <section class="s2">
-        <div class = "main-container">
-            <div class = "about-wrapper">
-                <div class = "about-me">
-                    <h4>Bio and Season Goals</h4>
-                    <p>Butt Chugging!!!!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="s1">
         <div class="main-container">
-                <h3 style="text-align: center;">Some of my projects</h3>
+                <h3 style="text-align: center;">Recent Posts</h3>
                 <div class="post-wrapper">
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="../static/images/standIn.png">
-                            <div class="post-preview">
-                                <h6 class="post-title">Post Title</h6>
-                                <p class="post-intro">This is a Sentence. Some More text</p>
-                                <a target="_blank" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="../static/images/standIn.png">
-                            <div class="post-preview">
-                                <h6 class="post-title">Post Title</h6>
-                                <p class="post-intro">This is a Sentence. Some More text</p>
-                                <a target="_blank" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="../static/images/standIn.png">
-                                <div class="post-preview">
-                                    <h6 class="post-title">Post Title</h6>
-                                    <p class="post-intro">This is a Sentence. Some More text</p>
-                                    <a target="_blank" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% for post in posts %}
+                        {% include '_Post.html' %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

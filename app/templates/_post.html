@@ -1,0 +1,11 @@
+<div>
+    <div class="post">
+        <img class="thumbnail" src="{{ user.avatar(post.getAuthor()) }}">
+        <div class="post-preview">
+            <h5 class="post-title">{{ post.title }}</h5>
+            <p class="post-intro">{{ post.getAuthor() }}</p>
+            <p class="post-intro">{{ post.body[:30] }}</p>
+            <a target="_blank" href="#">Read More</a>
+        </div>
+    </div>
+</div>

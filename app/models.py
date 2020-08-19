@@ -47,6 +47,16 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post {}>'.format(self.body)
 
+    def getAll(self):
+        p = Post.query.all()
+        return p
+
+    def getAuthor(self):
+        u = User.query.filter_by(id=self.user_id).first()
+        if u:
+            return u.username
+        return ""
+
 
 class Scores(db.Model):
     id = db.Column(db.Integer, primary_key=True)
