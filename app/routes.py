@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, url_for, request
 from app import app
 from flask_login import current_user, login_user, login_required, logout_user
-from app.models import User
+from app.models import User, Scores, Settings
 from werkzeug.urls import url_parse
 from app import db 
 from app.forms import RegistrationForm, EditProfileForm, LoginForm
@@ -64,11 +64,12 @@ def register():
 @login_required
 def profile(username):
     user = User.query.filter_by(username=username).first_or_404()
+    score = Scores.query.filter_by(user_id=user.id).first()
     posts = [
         {'author': user, 'body': 'Test post #1'},
         {'author': user, 'body': 'Test post #2'}
     ]
-    return render_template('profile.html', user=user, posts=posts)
+    return render_template('profile.html', user=user, posts=posts, score=score)
 
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required

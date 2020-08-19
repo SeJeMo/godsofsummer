@@ -47,7 +47,7 @@ class Post(db.Model):
 
 class Scores(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    score = db.Column(db.Integer)
+    score = db.Column(db.Integer, default=0)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), index=True)
 
     def __repr__(self):
