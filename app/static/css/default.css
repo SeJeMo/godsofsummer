@@ -13,8 +13,6 @@
     --previewShadow: #111921;
     
     --buttonColor: #17a2b8;
-
-    --backImage: url(../images/headshot1-2.png);
 }
 
 html, body{
@@ -151,7 +149,6 @@ h6 {font-size: 16px;}
     width: 500px;
     object-fit: cover;
     border: 2px solid var(--borderColor);
-    background-image: var(--backImage);
     background-repeat: no-repeat;
     background-size: 500px 500px;
 }
