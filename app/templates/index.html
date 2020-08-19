@@ -3,27 +3,24 @@
 {% block content %}
     <section class="s1">
         <div class="main-container">
-            <div class="greeting-wrapper">
-                <h1> Welcome to Gods of Summer 2020! </h1>
-            </div>
-            <div class="intro-wrapper">
-                <div class="left-column">
-                    <img id="profile-pic">
-                </div>
-                <div class="right-column">
-                    
-                    <div id="preview-shadow">
-                        <div id="preview">
-                            <div id="corner-tl" class="corner"></div>
-                            <div id="corner-tr" class="corner"></div>
-                            <h3>Current Score:</h3>
-                            <p>150pts - Rank 1</p>
-                            <div id="corner-bl" class="corner"></div>
-                            <div id="corner-br" class="corner"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <form action="" method="post" id = "contact-form">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.title.label }}<br>
+                    {{ form.title(class="input-field") }}<br>
+                    {% for error in form.title.errors %}
+                    <span style="color: red;">[{{error}}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.post.label }}<br>
+                    {{ form.post(class="input-field") }}<br>
+                    {% for error in form.post.errors %}
+                    <span style="color: red;">[{{error}}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.submit() }}</p>
+            </form>
         </div>
     </section>
     <section class="s2">
