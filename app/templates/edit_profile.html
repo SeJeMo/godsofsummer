@@ -8,13 +8,6 @@
             <form action="" method="post" id = "contact-form">
                 {{ form.hidden_tag() }}
                 <p>
-                    {{ form.username.label }}<br>
-                    {{ form.username(class="input-field") }}<br>
-                    {% for error in form.username.errors %}
-                    <span style="color: red;">[{{error}}]</span>
-                    {% endfor %}
-                </p>
-                <p>
                     {{ form.about_me.label }}<br>
                     {{ form.about_me(class="input-field") }}<br>
                     {% for error in form.about_me.errors %}
@@ -32,5 +25,4 @@
             </form>
         </div>
     </section>
-{% endblock %}
 {% endblock %}

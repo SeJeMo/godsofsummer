@@ -32,7 +32,7 @@ class RegistrationForm(FlaskForm):
         if token.data != "WASSIMS":
             raise ValidationError("Please enter the correct token.")
 
-class EditProfielForm(FlaskForm):
+class EditProfileForm(FlaskForm):
     about_me = TextAreaField('Bio', validators=[Length(min=0, max=256)])
     season_goals = TextAreaField('Season Goals', validators=[Length(min=0, max=256)])
     submit = SubmitField('Submit')

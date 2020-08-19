@@ -31,8 +31,13 @@
         <div class = "main-container">
             <div class = "about-wrapper">
                 <div class = "about-me">
-                    <h4>Bio and Season Goals</h4>
+                    <h4>Bio</h4>
                     {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                    <h5>Season Goals</h5>
+                    {% if user.season_goals %}<p>{{ user.season_goals }}</p>{% endif %}
+                    {% if user == current_user %}
+                    <p><a href="{{ url_for('edit_profile') }}">Edit your profile</a></p>
+                    {% endif %}
                     {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
                 </div>
             </div>

@@ -4,7 +4,7 @@ from flask_login import current_user, login_user, login_required, logout_user
 from app.models import User
 from werkzeug.urls import url_parse
 from app import db 
-from app.forms import RegistrationForm, EditProfielForm, LoginForm
+from app.forms import RegistrationForm, EditProfileForm, LoginForm
 from datetime import datetime
 
 @app.before_request
