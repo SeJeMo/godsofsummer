@@ -41,38 +41,9 @@
         <div class="main-container">
                 <h3 style="text-align: center;">Most Recent Activity</h3>
                 <div class="post-wrapper">
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="{{ user.avatar(user.username) }}">
-                            <div class="post-preview">
-                                <h6 class="post-title">Post Title</h6>
-                                <p class="post-intro">This is a Sentence. Some More text</p>
-                                <a target="_blank" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="{{ user.avatar(user.username) }}">
-                            <div class="post-preview">
-                                <h6 class="post-title">Post Title</h6>
-                                <p class="post-intro">This is a Sentence. Some More text</p>
-                                <a target="_blank" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="post">
-                            <img class="thumbnail" src="{{ user.avatar(user.username) }}">
-                                <div class="post-preview">
-                                    <h6 class="post-title">Post Title</h6>
-                                    <p class="post-intro">This is a Sentence. Some More text</p>
-                                    <a target="_blank" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% for post in posts %}
+                        {% include '_miniPost.html' %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
