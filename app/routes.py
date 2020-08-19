@@ -17,7 +17,6 @@ def before_request():
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    p = Post()
     user = User.query.filter_by(username=current_user.username).first_or_404()
     form = PostForm()
     if form.validate_on_submit():
@@ -27,7 +26,7 @@ def index():
         flash('Your post is now live!')
         return redirect(url_for('index'))
 
-    posts = p.getAll()
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
     return render_template("index.html", title='Home Page', form=form,
                            posts=posts, user=user)
 
