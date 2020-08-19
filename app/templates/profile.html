@@ -32,7 +32,8 @@
             <div class = "about-wrapper">
                 <div class = "about-me">
                     <h4>Bio and Season Goals</h4>
-                    <p>Butt Chugging!!!!</p>
+                    {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                    {% if user.last_seen %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
                 </div>
             </div>
         </div>

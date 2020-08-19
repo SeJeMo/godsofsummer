@@ -17,6 +17,7 @@ class User(UserMixin, db.Model):
     role = db.Column(db.String(120), default="PLAYER")
     about_me = db.Column(db.String(256))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
+    season_goals = db.Column(db.String(256))
 
     def __repr__(self):
         return '<User {}>'.format(self.username)

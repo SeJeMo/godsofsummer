@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-
 {% block content %}
     <section class="s1">
         <div class="main-container">
-            <h3 style="text-align: center;">Sign In</h3>
-
+            <div class="greeting-wrapper">
+                <h1> Edit Profile </h1>
+            </div>
             <form action="" method="post" id = "contact-form">
                 {{ form.hidden_tag() }}
                 <p>
@@ -15,17 +15,22 @@
                     {% endfor %}
                 </p>
                 <p>
-                    {{ form.password.label }}<br>
-                    {{ form.password(class="input-field") }}<br>
-                    {% for error in form.password.errors %}
+                    {{ form.about_me.label }}<br>
+                    {{ form.about_me(class="input-field") }}<br>
+                    {% for error in form.about_me.errors %}
                     <span style="color: red;">[{{ error }}]</span>
                     {% endfor %}
                 </p>
-                <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+                <p>
+                    {{ form.season_goals.label }}<br>
+                    {{ form.season_goals(class="input-field") }}<br>
+                    {% for error in form.season_goals.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
                 <p>{{ form.submit(id="submit-button") }}</p>
-                <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
             </form>
         </div>
     </section>
-    
+{% endblock %}
 {% endblock %}

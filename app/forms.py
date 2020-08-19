@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.validators import DataRequired, ValidationError, Email, EqualTo, Length
 from app.models import User
 
 class LoginForm(FlaskForm):
@@ -31,3 +31,8 @@ class RegistrationForm(FlaskForm):
     def validate_token(self, token):
         if token.data != "WASSIMS":
             raise ValidationError("Please enter the correct token.")
+
+class EditProfielForm(FlaskForm):
+    about_me = TextAreaField('Bio', validators=[Length(min=0, max=256)])
+    season_goals = TextAreaField('Season Goals', validators=[Length(min=0, max=256)])
+    submit = SubmitField('Submit')
